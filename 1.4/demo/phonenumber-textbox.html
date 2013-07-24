@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>PhoneNumberTextBox Demo</title>
+    <script src="http://g.tbcdn.cn/kissy/k/1.3.0/kissy-min.js" charset="utf-8"></script>
+</head>
+<body>
+<div class="container">
+
+    <div id="content" class="row">
+        <div class="span8">
+            <h3>PhoneNumberTextBox 电话号码输入框</h3>
+
+            <ul>
+                <li>
+                    支持手机号、固定电话号码，通过accept属性选择支持类型
+                </li>
+                <li>
+                    手机号码是1开头的11位数字
+                </li>
+                <li>
+                    固定电话号码是0开头的10-12位数字（3-4位区号+7-8位电话号码）
+                </li>
+            </ul>
+
+            <h4>默认支持手机号和固定电话号码</h4>
+
+            <div class="demo">
+                <div id="textbox-1">
+                    <input type="tel"/>
+                </div>
+            </div>
+
+            <h4>只支持手机号码</h4>
+
+            <div class="demo">
+                <div id="textbox-2">
+                    <input type="tel" data-accept="1" data-patternmismatchmessage="请输入11位号码" data-numberunsupportedmessage="不支持固定电话号码"/>
+                </div>
+            </div>
+
+
+            <h4>只支持固定电话</h4>
+
+            <div class="demo">
+                <div id="textbox-3">
+                    <input type="tel" data-accept="2" data-patternmismatchmessage="请加区号" data-numberunsupportedmessage="不支持固定手机号码"/>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<script>
+    var S = KISSY;
+    if (S.Config.debug) {
+        var srcPath = "../../../";
+        S.config({
+            packages:[
+                {
+                    name:"gallery",
+                    path:srcPath,
+                    charset:"utf-8",
+                    ignorePackageNameInUri:true
+                }
+            ]
+        });
+    }
+
+    S.use('gallery/textbox/1.4/', function (S, TextBox) {
+        var textbox1 = new TextBox.PhoneNumberTextBox('#textbox-1');
+        textbox1.render();
+        textbox1.on('blur', function () {
+            this.checkValidity();
+        });
+        textbox1.on('invalid', function () {
+            alert(this.get('validationMessage'));
+        });
+
+        var textbox2 = new TextBox.PhoneNumberTextBox('#textbox-2');
+        textbox2.render();
+        textbox2.on('blur', function () {
+            this.checkValidity();
+        });
+        textbox2.on('invalid', function () {
+            alert(this.get('validationMessage'));
+        });
+
+        var textbox3 = new TextBox.PhoneNumberTextBox('#textbox-3');
+        textbox3.render();
+        textbox3.on('blur', function () {
+            this.checkValidity();
+        });
+        textbox3.on('invalid', function () {
+            alert(this.get('validationMessage'));
+        });
+
+
+    })
+</script>
+</body>
+</html>

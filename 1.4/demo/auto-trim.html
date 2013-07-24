@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>auto-trim Demo</title>
+
+</head>
+<body data-spy="scroll" data-target=".subnav" data-offset="50">
+<div class="container">
+
+    <div id="content" class="row">
+        <div class="span8">
+            <script>
+                KISSY.config({
+                    packages: [{
+                        name:"gallery",
+                        path:"../../../../../../",
+                        charset:"utf-8"
+                    }]
+                });
+            </script>
+            <h3>内容改变时（例如键入、粘贴、动态赋值等操作），自动去除左右空格（trim），默认开启；</h3>
+
+            <div class="demo">
+                <div id="textbox-1">
+                    <input type="text"/>
+                </div>
+            </div>
+    </div>
+</div>
+<script>
+    var S = KISSY;
+    if (S.Config.debug) {
+        var srcPath = "../../../";
+        S.config({
+            packages:[
+                {
+                    name:"gallery",
+                    path:srcPath,
+                    charset:"utf-8",
+                    ignorePackageNameInUri:true
+                }
+            ]
+        });
+    }
+
+    S.use('gallery/textbox/1.4/', function (S, TextBox) {
+        var textbox = new TextBox.TextBox('#textbox-1', {
+            autoTrim: 'enabled'
+        });
+        textbox.render();
+    })
+</script>
+</body>
+</html>
