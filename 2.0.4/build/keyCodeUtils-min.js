@@ -1,0 +1,2 @@
+/*!build time : 2014-08-08 6:14:10 PM*/
+KISSY.add("kg/textbox/2.0.4/keyCodeUtils",function(){return{LEFT:37,UP:38,RIGHT:39,DOWN:40,ENTER:13,ESC:27,TAB:9,inNumberBlacklist:function(a){var b=!1,c=a.keyCode,d=a.shiftKey,e=(a.ctrlKey,a.metaKey);return c&&(c=1*c,((c>=96&&105>=c||c>=48&&57>=c)&&d||c>=65&&90>=c&&!e||c>=219&&222>=c||c>=186&&192>=c)&&(b=!0)),b}}});
