@@ -51,7 +51,7 @@ textbox对原生输入框做了封装，并在此基础上扩展。
 
 ### 初始化组件
 
-    S.use('kg/textbox/2.0.0/index', function (S, Textbox) {
+    S.use('kg/textbox/2.0.1/index', function (S, Textbox) {
          var textbox1 = new TextBox.TextBox('#textbox-1', {
              paste: 'enabled'
          });
