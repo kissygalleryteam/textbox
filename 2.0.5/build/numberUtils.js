@@ -1,7 +1,7 @@
 /*
 combined files : 
 
-kg/textbox/2.0.5/numberUtils
+kg/textbox/2.0.4/numberUtils
 
 */
 /*
@@ -9,7 +9,7 @@ kg/textbox/2.0.5/numberUtils
  * @author 牧云<muyun.my@taobao.com>
  * @date 2012-06
  */
-KISSY.add('kg/textbox/2.0.5/numberUtils',function (S, AJAX) {
+KISSY.add('kg/textbox/2.0.4/numberUtils',function (S, AJAX) {
     var re = {};
 
     var UTILS = re;

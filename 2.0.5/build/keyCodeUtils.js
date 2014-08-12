@@ -1,7 +1,7 @@
 /*
 combined files : 
 
-kg/textbox/2.0.5/keyCodeUtils
+kg/textbox/2.0.4/keyCodeUtils
 
 */
 /*
@@ -9,7 +9,7 @@ kg/textbox/2.0.5/keyCodeUtils
  * @author 牧云 <muyun.my@taobao.com>
  * @date 2013-01-22
  */
-KISSY.add('kg/textbox/2.0.5/keyCodeUtils',function (S) {
+KISSY.add('kg/textbox/2.0.4/keyCodeUtils',function (S) {
     return {
         LEFT: 37,
         UP: 38,

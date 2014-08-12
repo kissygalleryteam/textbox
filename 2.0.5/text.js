@@ -12,8 +12,8 @@ KISSY.add(function (S, DOM, Node, Base, JSON, Overlay) {
     var UA = S.UA;
 
     var PLACEHOLDER_STYLE = {
-        ON: 1,
-        OFF: 0,
+        ALL: 0,
+        AUTO: 1,
         ARR: [0, 1]
     };
 
@@ -52,7 +52,7 @@ KISSY.add(function (S, DOM, Node, Base, JSON, Overlay) {
 
     S.extend(TextBox, Base, {
         _needToImplementPlaceholder: function () {
-            return this.get('placeholderStyle') != TextBox.PLACEHOLDER_STYLE.OFF && !TextBox.IS_PLACEHOLDER_SUPPORTED;
+            return this.get('placeholderStyle') == TextBox.PLACEHOLDER_STYLE.ALL || !TextBox.IS_PLACEHOLDER_SUPPORTED;
         },
         /**
          * 设置maxLength
@@ -453,7 +453,7 @@ KISSY.add(function (S, DOM, Node, Base, JSON, Overlay) {
                 }
             },
             placeholderStyle: {
-                value: PLACEHOLDER_STYLE.OFF,
+                value: PLACEHOLDER_STYLE.AUTO,
                 validator: function (value) {
                     var re = true;
 
@@ -540,7 +540,7 @@ KISSY.add(function (S, DOM, Node, Base, JSON, Overlay) {
                 }
             },
             helper: {
-                value: false,
+                valule: false,
                 setter: function (value) {
                     var re = undefined;
 

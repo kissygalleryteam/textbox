@@ -1,13 +1,13 @@
 /*
 combined files : 
 
-kg/textbox/2.0.5/text
-kg/textbox/2.0.5/keyCodeUtils
-kg/textbox/2.0.5/number
-kg/textbox/2.0.5/numberUtils
-kg/textbox/2.0.5/phonenumber
-kg/textbox/2.0.5/qqnumber
-kg/textbox/2.0.5/index
+kg/textbox/2.0.4/text
+kg/textbox/2.0.4/keyCodeUtils
+kg/textbox/2.0.4/number
+kg/textbox/2.0.4/numberUtils
+kg/textbox/2.0.4/phonenumber
+kg/textbox/2.0.4/qqnumber
+kg/textbox/2.0.4/index
 
 */
 /*
@@ -20,12 +20,12 @@ kg/textbox/2.0.5/index
  * 1.将部分属性设置为只读
  * 2.aria支持
  */
-KISSY.add('kg/textbox/2.0.5/text',function (S, DOM, Node, Base, JSON, Overlay) {
+KISSY.add('kg/textbox/2.0.4/text',function (S, DOM, Node, Base, JSON, Overlay) {
     var UA = S.UA;
 
     var PLACEHOLDER_STYLE = {
-        ON: 1,
-        OFF: 0,
+        ALL: 0,
+        AUTO: 1,
         ARR: [0, 1]
     };
 
@@ -64,7 +64,7 @@ KISSY.add('kg/textbox/2.0.5/text',function (S, DOM, Node, Base, JSON, Overlay) {
 
     S.extend(TextBox, Base, {
         _needToImplementPlaceholder: function () {
-            return this.get('placeholderStyle') != TextBox.PLACEHOLDER_STYLE.OFF && !TextBox.IS_PLACEHOLDER_SUPPORTED;
+            return this.get('placeholderStyle') == TextBox.PLACEHOLDER_STYLE.ALL || !TextBox.IS_PLACEHOLDER_SUPPORTED;
         },
         /**
          * 设置maxLength
@@ -465,7 +465,7 @@ KISSY.add('kg/textbox/2.0.5/text',function (S, DOM, Node, Base, JSON, Overlay) {
                 }
             },
             placeholderStyle: {
-                value: PLACEHOLDER_STYLE.OFF,
+                value: PLACEHOLDER_STYLE.AUTO,
                 validator: function (value) {
                     var re = true;
 
@@ -552,7 +552,7 @@ KISSY.add('kg/textbox/2.0.5/text',function (S, DOM, Node, Base, JSON, Overlay) {
                 }
             },
             helper: {
-                value: false,
+                valule: false,
                 setter: function (value) {
                     var re = undefined;
 
@@ -601,7 +601,7 @@ KISSY.add('kg/textbox/2.0.5/text',function (S, DOM, Node, Base, JSON, Overlay) {
  * @author 牧云 <muyun.my@taobao.com>
  * @date 2013-01-22
  */
-KISSY.add('kg/textbox/2.0.5/keyCodeUtils',function (S) {
+KISSY.add('kg/textbox/2.0.4/keyCodeUtils',function (S) {
     return {
         LEFT: 37,
         UP: 38,
@@ -644,7 +644,7 @@ KISSY.add('kg/textbox/2.0.5/keyCodeUtils',function (S) {
  * 1.将部分属性设置为只读
  * 2.aria支持
  */
-KISSY.add('kg/textbox/2.0.5/number',function (S, DOM, Node, TextBox, KeyCodeUtils) {
+KISSY.add('kg/textbox/2.0.4/number',function (S, DOM, Node, TextBox, KeyCodeUtils) {
         /*
          * @name NumberTextBox
          * @class 号码输入框
@@ -721,7 +721,7 @@ KISSY.add('kg/textbox/2.0.5/number',function (S, DOM, Node, TextBox, KeyCodeUtil
  * @author 牧云<muyun.my@taobao.com>
  * @date 2012-06
  */
-KISSY.add('kg/textbox/2.0.5/numberUtils',function (S, AJAX) {
+KISSY.add('kg/textbox/2.0.4/numberUtils',function (S, AJAX) {
     var re = {};
 
     var UTILS = re;
@@ -1230,7 +1230,7 @@ KISSY.add('kg/textbox/2.0.5/numberUtils',function (S, AJAX) {
  * @author 牧云 <muyun.my@taobao.com>
  * @date 2013-01-22
  */
-KISSY.add('kg/textbox/2.0.5/phonenumber',function (S, DOM, Node, NumberTextBox, NumberUtils) {
+KISSY.add('kg/textbox/2.0.4/phonenumber',function (S, DOM, Node, NumberTextBox, NumberUtils) {
         /*
          * @name PhoneNumberTextBox
          * @class 电话号码输入框
@@ -1414,7 +1414,7 @@ KISSY.add('kg/textbox/2.0.5/phonenumber',function (S, DOM, Node, NumberTextBox, 
  * 1.将部分属性设置为只读
  * 2.aria支持
  */
-KISSY.add('kg/textbox/2.0.5/qqnumber',function (S, DOM, Node, Base, NumberTextBox, KeyCodeUtils) {
+KISSY.add('kg/textbox/2.0.4/qqnumber',function (S, DOM, Node, Base, NumberTextBox, KeyCodeUtils) {
         /*
          * @name QQNumberTextBox
          * @class QQ号输入框
@@ -1464,7 +1464,7 @@ KISSY.add('kg/textbox/2.0.5/qqnumber',function (S, DOM, Node, Base, NumberTextBo
  * @author 牧云 <muyun.my@taobao.com>
  * @date 2013-01-22
  */
-KISSY.add('kg/textbox/2.0.5/index',function (S, TextBox, NumberTextBox, PhoneNumberTextBox, QQNumberTextBox) {
+KISSY.add('kg/textbox/2.0.4/index',function (S, TextBox, NumberTextBox, PhoneNumberTextBox, QQNumberTextBox) {
         return {
             TextBox: TextBox,
             NumberTextBox: NumberTextBox,
