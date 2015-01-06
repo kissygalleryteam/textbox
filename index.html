@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Textbox : 输入框增强组件">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Textbox</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/kissygalleryteam/textbox">View on GitHub</a>
+
+          <h1 id="project_title">Textbox</h1>
+          <h2 id="project_tagline">输入框增强组件</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/kissygalleryteam/textbox/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/kissygalleryteam/textbox/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h2>
+<a id="textbox" class="anchor" href="#textbox" aria-hidden="true"><span class="octicon octicon-link"></span></a>textbox</h2>
+
+<ul>
+<li>版本：1.4</li>
+<li>教程：<a href="http://gallery.kissyui.com/textbox/1.4/guide/index.html">http://gallery.kissyui.com/textbox/1.4/guide/index.html</a>
+</li>
+<li>demo：<a href="http://gallery.kissyui.com/textbox/1.4/demo/index.html">http://gallery.kissyui.com/textbox/1.4/demo/index.html</a>
+</li>
+</ul>
+
+<h1>
+<a id="表单输入域组件" class="anchor" href="#%E8%A1%A8%E5%8D%95%E8%BE%93%E5%85%A5%E5%9F%9F%E7%BB%84%E4%BB%B6" aria-hidden="true"><span class="octicon octicon-link"></span></a>表单输入域组件</h1>
+
+<p>对原生输入框做了封装，并在此基础上扩展。</p>
+
+<h2>
+<a id="提供的输入框种类" class="anchor" href="#%E6%8F%90%E4%BE%9B%E7%9A%84%E8%BE%93%E5%85%A5%E6%A1%86%E7%A7%8D%E7%B1%BB" aria-hidden="true"><span class="octicon octicon-link"></span></a>提供的输入框种类</h2>
+
+<h3>
+<a id="文本输入框-textbox" class="anchor" href="#%E6%96%87%E6%9C%AC%E8%BE%93%E5%85%A5%E6%A1%86-textbox" aria-hidden="true"><span class="octicon octicon-link"></span></a>文本输入框 TextBox</h3>
+
+<p>所有输入框的基类。</p>
+
+<p>支持的特性有：</p>
+
+<ul>
+<li>支持输入框获取焦点时自动全选内容，开关功能</li>
+<li>支持禁止粘贴，开关功能</li>
+<li>支持内容改变时（主要是键入内容、粘贴、动态赋值）自动去除左右空格（trim功能）</li>
+<li>通过API改变maxLength时，截断多余内容</li>
+<li>兼容Placeholder功能。原生的Placeholder功能会在输入框键入内容的时候才会隐藏Placeholder，模拟的目前会在focus的时候隐藏Placeholder</li>
+<li>封装了The Constraint Validation API，兼容required和pattern属性</li>
+<li>输入内容的时候支持显示一个弹层，根据输入内容动态显示信息</li>
+</ul>
+
+<p>以上特性所有继承于TextBox的类都会有。</p>
+
+<h3>
+<a id="号码输入框-numbertextbox" class="anchor" href="#%E5%8F%B7%E7%A0%81%E8%BE%93%E5%85%A5%E6%A1%86-numbertextbox" aria-hidden="true"><span class="octicon octicon-link"></span></a>号码输入框 NumberTextBox</h3>
+
+<p>只允许输入数字。</p>
+
+<h3>
+<a id="qq号输入框-qqnumbertextbox" class="anchor" href="#qq%E5%8F%B7%E8%BE%93%E5%85%A5%E6%A1%86-qqnumbertextbox" aria-hidden="true"><span class="octicon octicon-link"></span></a>QQ号输入框 QQNumberTextBox</h3>
+
+<p>继承于号码输入框，有效的QQ号是4-10位的数字。</p>
+
+<h3>
+<a id="电话号码输入框-phonenumbertextbox" class="anchor" href="#%E7%94%B5%E8%AF%9D%E5%8F%B7%E7%A0%81%E8%BE%93%E5%85%A5%E6%A1%86-phonenumbertextbox" aria-hidden="true"><span class="octicon octicon-link"></span></a>电话号码输入框 PhoneNumberTextBox</h3>
+
+<p>继承于号码输入框。</p>
+
+<p>可以选择支持的号码类型，手机号码，固定电话号码，还是两者皆可。</p>
+
+<p>有效的手机号码是11位的数字。</p>
+
+<p>有效的固定电话号码必须包含区号（3-4位），加上7-8位的号码，总长度在10-12位之间。</p>
+
+<h2>
+<a id="todo" class="anchor" href="#todo" aria-hidden="true"><span class="octicon octicon-link"></span></a>TODO</h2>
+
+<ul>
+<li>Placeholder模拟加强</li>
+<li>ARIA特性</li>
+<li>textarea</li>
+<li>email</li>
+<li>url</li>
+</ul>
+
+<h2>
+<a id="样式" class="anchor" href="#%E6%A0%B7%E5%BC%8F" aria-hidden="true"><span class="octicon octicon-link"></span></a>样式</h2>
+
+<h2>
+<a id="changelog" class="anchor" href="#changelog" aria-hidden="true"><span class="octicon octicon-link"></span></a>changelog</h2>
+
+<h3>
+<a id="v14" class="anchor" href="#v14" aria-hidden="true"><span class="octicon octicon-link"></span></a>V1.4</h3>
+
+<pre><code>[!]迁移到新gallery库
+</code></pre>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Textbox maintained by <a href="https://github.com/kissygalleryteam">kissygalleryteam</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
