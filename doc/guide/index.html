@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>textbox</title>
+    <link rel="stylesheet" href="http://cdn.staticfile.org/twitter-bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://docs.kissyui.com/1.4/source/guideline/templates/assets/com-prettify.css">
+    <link rel="stylesheet" href="http://docs.kissyui.com/1.4/source/guideline/templates/assets/com.css">
+    <script src="http://cdn.staticfile.org/jquery/2.1.1-rc2/jquery.min.js"></script>
+    <script src="http://cdn.staticfile.org/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="http://cdn.staticfile.org/prettify/r298/prettify.min.js"></script>
+    <script src="http://g.tbcdn.cn/kissy/k/1.4.8/seed-min.js" data-config="{combine:true}"></script>
+  </head>
+  <body data-spy="scroll" data-target=".bs-docs-sidebar">
+    <div id="header"><a href="http://docs.kissyui.com/" class="logo">kissy</a>
+      <nav><a href="http://docs.kissyui.com/1.4/docs/html/coms.html">优秀组件推荐</a></nav>
+    </div>
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3 bs-docs-sidebar">
+          <ul data-spy="affix" data-offset-top="0" class="nav nav-list bs-docs-sidenav"></ul>
+        </div>
+        <div class="span9 bs-docs-content">
+          <h1 data-id="undefined" class="title">textbox</h1>
+          <p class="author-wrapper"><span>组件有问题？旺旺联系作者：</span><a href="https://github.com/tinymoo" target="_blank" data-name="牧云" class="author"><img src="https://avatars.githubusercontent.com/u/308538?v=2&amp;s=60" alt="牧云"></a><span class="author-name">牧云</span>
+          </p>
+          <div class="common-link"><a href="../demo/index.html" target="_blank" class="demo">示例</a><a href="https://github.com/kissygalleryteam/textbox" target="_blank" class="source">源码</a></div>
+          <p class="com-info"><span class="info-label">View</span><span data-com="textbox" class="J_View">556</span></p>
+          <p class="com-info"><span class="info-label">所属分类</span><a href="http://kpm.taobao.net/list/表单">表单</a><span class="info-label tag-label">组件标签</span><a href="http://kpm.taobao.net/list/tag?tag="></a>
+          </p>
+          <p class="com-info"><span class="info-label">kissy版本</span><span>1.4.X</span>
+          </p><h2 id="-">综述</h2>
+<p>组件重构中，敬请谅解。</p>
+<p>textbox对原生输入框做了封装，并在此基础上扩展。</p>
+<h2 id="-">提供的输入框种类</h2>
+<h3 id="-textbox">文本输入框 TextBox</h3>
+<p>所有输入框的基类。</p>
+<p>支持的特性有：</p>
+<ul>
+<li>支持输入框获取焦点时自动全选内容，开关功能</li>
+<li>支持禁止粘贴，开关功能</li>
+<li>支持内容改变时（主要是键入内容、粘贴、动态赋值）自动去除左右空格（trim功能）</li>
+<li>通过API改变maxLength时，截断多余内容</li>
+<li>兼容Placeholder功能。原生的Placeholder功能会在输入框键入内容的时候才会隐藏Placeholder，模拟的目前会在focus的时候隐藏Placeholder</li>
+<li>封装了The Constraint Validation API，兼容required和pattern属性</li>
+<li>输入内容的时候支持显示一个弹层，根据输入内容动态显示信息</li>
+</ul>
+<p>以上特性所有继承于TextBox的类都会有。</p>
+<h3 id="-numbertextbox">号码输入框 NumberTextBox</h3>
+<p>只允许输入数字。</p>
+<h3 id="qq-qqnumbertextbox">QQ号输入框 QQNumberTextBox</h3>
+<p>继承于号码输入框，有效的QQ号是4-10位的数字。</p>
+<h3 id="-phonenumbertextbox">电话号码输入框 PhoneNumberTextBox</h3>
+<p>继承于号码输入框。</p>
+<p>可以选择支持的号码类型，手机号码，固定电话号码，还是两者皆可。</p>
+<p>有效的手机号码是11位的数字。</p>
+<p>有效的固定电话号码必须包含区号（3-4位），加上7-8位的号码，总长度在10-12位之间。</p>
+<h2 id="-">快速使用</h2>
+<h3 id="html">HTML</h3>
+<pre><code>&lt;div id=&quot;textbox-1&quot;&gt;
+    &lt;input type=&quot;text&quot;/&gt;
+&lt;/div&gt;
+</code></pre><h3 id="-">初始化组件</h3>
+<pre><code>S.use(&#39;kg/textbox/2.0.0/index&#39;, function (S, Textbox) {
+     var textbox1 = new TextBox.TextBox(&#39;#textbox-1&#39;, {
+         paste: &#39;enabled&#39;
+     });
+     textbox1.render();
+})
+</code></pre><h2 id="api-">API说明</h2>
+
+          <div style="display:none;"><script type="text/javascript" src="http://tajs.qq.com/stats?sId=36378479" charset="UTF-8"></script></div>
+          <script src="http://docs.kissyui.com/1.4/source/guideline/templates/assets/com.js"></script>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
